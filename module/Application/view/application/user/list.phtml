@@ -1,0 +1,26 @@
+<h1>Liste des utilisateurs</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+<?php   foreach ($entities as $_) :?>
+        <tr>
+            <td><?= $_['firstName'];?></td>
+            <td><?= $_['lastName'];?></td>
+            <td><?= $_['email'];?></td>
+            <td><a href="/crud/user/get/<?= $_['id'];?>">Voir</a><span>&nbsp;</span><a href="/crud/user/set/<?= $_['id'];?>">Modifier</a></a></td>
+        </tr>
+<?php   endforeach;?>
+    </tbody>
+</table>
+<?php
+echo $this->buttons;
+?>
+</div>

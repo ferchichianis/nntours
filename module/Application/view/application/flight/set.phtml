@@ -1,0 +1,34 @@
+<?php
+/**
+ * mutate.phtml
+ *
+ * @date        28/04/2014
+ * @file        mutate.phtml
+ */
+?>
+<form class="form-horizontal" role="form" method="post">
+    <h2>Edition du vol</h2>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('reference')->getAttribute('id');?>"><?= $form->get('reference')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('reference'));?></div>
+<?php   echo $this->formElementErrors($form->get('reference'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('departure')->getAttribute('id');?>"><?= $form->get('departure')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formSelect($form->get('departure'));?></div>
+<?php   echo $this->formElementErrors($form->get('departure'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('arrival')->getAttribute('id');?>"><?= $form->get('arrival')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formSelect($form->get('arrival'));?></div>
+<?php   echo $this->formElementErrors($form->get('arrival'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('datetime')->getAttribute('id');?>"><?= $form->get('datetime')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('datetime'));?></div>
+<?php   echo $this->formElementErrors($form->get('datetime'));?>
+    </div>
+<?php
+    echo $this->buttonsSet;
+?>
+</form>

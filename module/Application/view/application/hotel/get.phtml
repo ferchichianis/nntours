@@ -1,0 +1,18 @@
+<?php
+/**
+ * get.phtml
+ *
+ * @date        29/04/2014
+ * @file        get.phtml
+ *
+ */
+?>
+<h1>Fiche de l'hôtel <?= $entity['name'] ?></h1>
+<p>Catégorie: <?= $entity['category'] ? $entity['category'] : '' ?> </a></p>
+<p><span class="glyphicon glyphicon-phone-alt">&nbsp;</span><?= $entity['phone'] ?> </a></p>
+<p>Fax <?= $entity['fax'] ?> </a></p>
+<p>Ville <?= $entity['city'] ? $entity['city'] . ($entity['city']->getCountry() ? ' (' . $entity['city']->getCountry() . ')' : '') : ''; ?></p>
+<p>Créé le <?= $entity['createdDate']->format('Y-m-d H:i:s'); ?></p>
+<p>Modifié le <?= $entity['updatedTime']->format('Y-m-d H:i:s'); ?></p>
+<?php
+echo $this->buttonsView;

@@ -1,0 +1,24 @@
+<?php
+/**
+ * get.phtml
+ *
+ * @date        29/04/2014
+ * @file        get.phtml
+ *
+ */
+?>
+<h1>Fiche de l'utilisateur <?= $entity ?> </h1>
+
+<p>Email <a href="mailto:<?= $entity['email'] ?>"> <?= $entity['email'] ?> </a></p>
+
+<p>Pays <?= $entity['country'] ? $entity['country'] : ''; ?></p>
+
+<p>Né(e) le <?= $entity['birthDate']->format('Y-m-d'); ?></p>
+
+<p>Créé(e) le <?= $entity['createdDate']->format('Y-m-d H:i:s'); ?></p>
+
+<p>Modifié(e) le <?= $entity['updatedTime']->format('Y-m-d H:i:s'); ?></p>
+
+<?php
+
+echo $this->buttonsView;

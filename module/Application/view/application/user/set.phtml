@@ -1,0 +1,48 @@
+<?php
+/**
+ * mutate.phtml
+ *
+ * @date        28/04/2014
+ * @file        mutate.phtml
+ */
+?>
+<form class="form-horizontal" role="form" method="post">
+    <h2>Edition de l'utilisateur</h2>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('firstName')->getAttribute('id');?>"><?= $form->get('firstName')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('firstName'));?></div>
+<?php   echo $this->formElementErrors($form->get('firstName'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('lastName')->getAttribute('id');?>"><?= $form->get('lastName')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('lastName'));?></div>
+<?php   echo $this->formElementErrors($form->get('lastName'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('email')->getAttribute('id');?>"><?= $form->get('email')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('email'));?></div>
+<?php   echo $this->formElementErrors($form->get('email'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('phone')->getAttribute('id');?>"><?= $form->get('phone')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('phone'));?></div>
+<?php   echo $this->formElementErrors($form->get('phone'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('country')->getAttribute('id');?>"><?= $form->get('country')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formSelect($form->get('country'));?></div>
+<?php   echo $this->formElementErrors($form->get('country'));?>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" for="<?= $form->get('birthDate')->getAttribute('id');?>"><?= $form->get('birthDate')->getOption('label');?></label>
+        <div class="col-sm-9"><?= $this->formInput($form->get('birthDate'));?></div>
+<?php   echo $this->formElementErrors($form->get('birthDate'));?>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-9 btn-group pull-right">
+            <button type="submit" class="btn btn-default">Enregistrer</button>
+            <a class="btn btn-default" href="/user">Annuler</a>
+            <a class="btn btn-default" href="/user">Retour à la liste</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+<h1>Liste des vols</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Référence</th>
+            <th>Départ</th>
+            <th>Arrivé</th>
+            <th>Horaire</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php   foreach ($entities as $_) :?>
+        <tr>
+            <td><?= $_['reference'];?></td>
+            <td><?= $_['departure'];?></td>
+            <td><?= $_['arrival'];?></td>
+            <td><a href="/crud/flight/get/<?= $_['id'];?>">Voir</a><span>&nbsp;</span><a href="/crud/flight/set/<?= $_['id'];?>">Modifier</a></a></td>
+        </tr>
+<?php   endforeach;?>
+    </tbody>
+</table>
+<?php
+echo $this->buttons;
+?>
+</div>

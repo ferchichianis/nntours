@@ -1,0 +1,19 @@
+<?php
+/**
+ * get.phtml
+ *
+ * @date        29/04/2014
+ * @file        get.phtml
+ *
+ */
+?>
+<h1>Fiche de l'aéroport <?= $entity['name'] ?></h1>
+
+<p>Trigramme. <?= $entity['code3'] ?> </a></p>
+
+<p>Ville. <?= $entity['city'] ? $entity['city'] : ''?> </a></p>
+
+<p>Créé le <?= $entity['createdDate']->format('Y-m-d H:i:s'); ?></p>
+<?php
+
+echo $this->buttonsView ;

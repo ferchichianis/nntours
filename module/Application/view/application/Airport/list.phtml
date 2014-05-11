@@ -1,0 +1,31 @@
+<h1>Liste des aéroports</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Ville</th>
+            <th>Trigramme</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+<?php   foreach ($entities as $_) :?>
+        <tr>
+            <td><?= $_['name'];?></td>
+            <td><?= $_['city'] . ($_['city']->getCountry() ? ' (' . $_['city']->getCountry() . ')' : '');?></td>
+            <td><?= $_['code3'];?></td>
+            <td>
+                <div class="btn-group btn-group-xs">
+                    <a class="btn btn-default" href="<?php echo $this->url('crud', ['action' => 'get', 'entity' => 'airport', 'id' => $_['id']]);?>"><span class="glyphicon glyphicon-edit"></span><span>&nbsp;Modifier</span></span></a>
+                    <a class="btn btn-default" href="<?php echo $this->url('crud', ['action' => 'get', 'entity' => 'airport', 'id' => $_['id']]);?>"><span class="glyphicon glyphicon-remove"></span><span>&nbsp;Supprimer</span></a>
+                </div>
+            </td>
+        </tr>
+<?php   endforeach;?>
+    </tbody>
+</table>
+<?php
+echo $this->buttons;
+?>
+</div>
