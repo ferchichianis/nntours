@@ -8,4 +8,5 @@ public/.htaccess
 composer.lock
 composer.phar
 vendor/
+data/
 composer.phar
